@@ -1,0 +1,59 @@
+User
+{
+  "userId": "USER#1234",
+  "name": "John Doe",
+  "email": "john@example.com",
+  "role": "organizer", // or "provider"
+  "createdAt": "2025-07-12T10:00:00Z"
+}
+
+Event
+{
+  "eventId": "EVENT#5678",
+  "organizerId": "USER#1234",
+  "title": "Private Party",
+  "location": "Sydney",
+  "startTime": "2025-08-01T18:00:00Z",
+  "endTime": "2025-08-01T23:00:00Z"
+}
+Booking
+{
+  "bookingId": "BOOKING#9012",
+  "eventId": "EVENT#5678",
+  "providerId": "USER#4321",
+  "status": "pending",
+  "startTime": "2025-08-01T18:00:00Z",
+  "endTime": "2025-08-01T23:00:00Z"
+}
+Bouncer
+{
+  "bouncerId": "BOUNCER#9999",
+  "providerId": "USER#4321",
+  "name": "Mike Tyson",
+  "experienceYears": 5,
+  "hourlyRate": 40
+}
+RateCard
+{
+  "rateCardId": "RATE#3456",
+  "providerId": "USER#4321",
+  "serviceType": "Event Guard",
+  "ratePerHour": 50,
+  "minHours": 4
+}
+Invoices 
+{
+  "invoiceId": "INVOICE#6543",
+  "bookingId": "BOOKING#9012",
+  "amount": 250.0,
+  "issuedAt": "2025-07-12T12:00:00Z",
+  "paid": false
+}
+Availablity 
+{
+  "bouncerId": "BOUNCER#9999",
+  "date": "2025-08-01",
+  "isAvailable": true,
+  "timeSlots": ["18:00", "23:00"]
+}
+

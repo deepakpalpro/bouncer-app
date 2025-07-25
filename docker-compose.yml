@@ -1,0 +1,24 @@
+    version: '3.8'
+
+    services:
+      api-rest-private:
+        build: ./api-rest-private # Or specify an image like node:18-alpine
+        ports:
+          - "5000:5000"
+        volumes:
+          - ./api-rest-private:/usr/src/app/api-rest-private # Mounts your local 'src' directory to '/usr/src/app' in the container
+        working_dir: /usr/src/app/api-rest-private
+        environment:
+          MONGO_URI: mongodb://mongo:27017/bouncer-app
+        command: npm run dev # Or your specific start command for development
+        depends_on:
+          - mongo
+      mongo:
+        image: mongo:latest
+        ports:
+          - "27017:27017"
+        volumes:
+          - mongo-data:/data/db # Persistent volume for MongoDB data
+
+    volumes:
+      mongo-data:
